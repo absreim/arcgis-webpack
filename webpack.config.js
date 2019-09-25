@@ -1,12 +1,13 @@
 const ArcGISPlugin = require('@arcgis/webpack-plugin');
+const path = require('path');
 
 module.exports = {
   entry: [
     'src/index.jsx',
   ],
   output: {
-    path: __dirname,
-    filename: 'public/bundle.js',
+    path: path.resolve(__dirname, 'public'),
+    filename: '[name].bundle.js',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -24,5 +25,9 @@ module.exports = {
   plugins: [
     new ArcGISPlugin(),
   ],
-  node: false,
+  node: {
+    process: false,
+    global: false,
+    fs: 'empty',
+  },
 };

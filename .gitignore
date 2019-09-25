@@ -1,1 +1,6 @@
 node_modules
+*.bundle.js
+/public/arcgis-js-api
+/public/dojo
+/public/esri
+/public/moment
